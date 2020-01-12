@@ -8,7 +8,9 @@
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.3",
@@ -19,7 +21,10 @@
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0",
     "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-jest": "^24.9.0",
     "browser-env": "^3.2.5",
-    "nodemon": "^1.18.9"
+    "jest": "^24.9.0",
+    "nodemon": "^1.18.9",
+    "vue-jest": "^4.0.0-0"
   }
 }
