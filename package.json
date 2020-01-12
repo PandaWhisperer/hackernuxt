@@ -16,7 +16,8 @@
     "@nuxtjs/axios": "^5.9.3",
     "cross-env": "^5.2.0",
     "koa": "^2.6.2",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0",
