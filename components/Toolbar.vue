@@ -44,7 +44,7 @@ export default {
           to: '/inspire'
         }
       ],
-      title: 'Vuetify.js'
+      title: 'HackerNews'
     }
   }
 }
