@@ -73,5 +73,8 @@ module.exports = {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  serverMiddleware: [
+    { path: '/api', handler: '~/server/api' }
+  ]
 }
