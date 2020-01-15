@@ -27,8 +27,11 @@ describe('getItem', () => {
       .get(`/item/${story.id}.json`)
       .reply(200, story)
 
-    expect( await getItem('22022466') ).toEqual(story)
-    expect( mock.isDone() ).toBe(true)
+    expect( await getItem('22022466') ).toEqual(
+      { ...story, date: expect.any(Date) }
+    )
+
+    mock.done()
   })
 })
 
@@ -44,6 +47,6 @@ describe('getStories', () => {
 
     await getStories()
 
-    expect( mock.isDone() ).toBe(true)
+    mock.done()
   })
 })
