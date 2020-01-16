@@ -12,7 +12,8 @@
         </v-list-item-title>
         <v-list-item-subtitle>
           By {{ story.by }},
-          {{ $timeAgo(story.date) }}
+          {{ $timeAgo(story.date) }},
+          {{ story.descendants }} comments
         </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
@@ -21,10 +22,8 @@
 
 <script>
 export default {
-  computed: {
-    stories() {
-      return this.$store.state.stories
-    }
+  props: {
+    stories: Array
   }
 }
 </script>

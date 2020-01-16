@@ -1,5 +1,5 @@
 <template>
-  <div v-if="story">
+  <div>
     <v-card v-if="story">
       <v-card-title>
         {{ story.title }}
@@ -24,21 +24,10 @@
     </v-card>
 
     <comment
-      v-for="comment in comments"
+      v-for="comment in story.children"
       :comment="comment"
       :key="comment.id"
     />
-  </div>
-
-  <div v-else>
-    <v-card>
-      <v-card-title>
-        Nothing selected.
-      </v-card-title>
-      <v-card-text>
-        Click an article on the right to read something.
-      </v-card-text>
-    </v-card>
   </div>
 </template>
 
@@ -55,14 +44,11 @@ export default {
   components: {
     Comment
   },
-  computed: {
-    story() {
-      return this.$store.state.current
-    },
-    comments() {
-      return this.$store.state.current.children
-    }
+
+  props: {
+    story: Object
   },
+
   methods: {
     urlFor({ id }) {
       return `https://news.ycombinator.com/item?id=${id}`
