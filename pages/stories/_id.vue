@@ -22,6 +22,9 @@ export default {
       await store.dispatch('loadStories')
     }
     await store.dispatch('loadStory', params.id)
+  },
+  validate({ params }) {
+    return /^[0-9]+$/.test(params.id)
   }
 }
 </script>
