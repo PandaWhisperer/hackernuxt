@@ -25,7 +25,7 @@
 
 <style>
   .indent {
-    border-left: 10px solid gray;
+    border-left: 0.5rem solid #666;
   }
 </style>
 
