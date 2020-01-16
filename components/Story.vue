@@ -6,16 +6,16 @@
       </v-card-title>
       <v-card-subtitle>
         <strong>{{ story.by }}</strong>
-        posted {{ $timeAgo(story.date) }}
-
-        <v-icon>mdi-comments-text</v-icon>
-        {{ story.descendants }} Comments<br/>
+        posted {{ $timeAgo(story.date) }}<br/>
 
         <v-icon>mdi-external-link</v-icon>
         <a :href="story.url" target="_blank">{{ story.url }}</a><br/>
 
         <v-icon>mdi-external-link</v-icon>
-        <a :href="urlFor(story)" target="_blank">{{ urlFor(story) }}</a>
+        <a :href="urlFor(story)" target="_blank">{{ urlFor(story) }}</a><br/>
+
+        <v-icon>mdi-comments-text</v-icon>
+        {{ story.descendants }} Comments
       </v-card-subtitle>
       <v-card-text>
       </v-card-text>
