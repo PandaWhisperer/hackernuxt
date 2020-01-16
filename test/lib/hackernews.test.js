@@ -16,7 +16,6 @@ describe('getItem', () => {
       "id" : 22022466,
       "by" : "danabramov",
       "descendants" : 571,
-      "kids" : [ 22022603, 22024416, 22024107 ],
       "score" : 1657,
       "time" : 1578778327,
       "title" : "Goodbye, Clean Code",
@@ -30,6 +29,44 @@ describe('getItem', () => {
     expect( await getItem('22022466') ).toEqual(
       { ...story, date: expect.any(Date) }
     )
+
+    mock.done()
+  })
+
+  test('with children when depth > 0', async () => {
+    const story = {
+      "id" : 22022466,
+      "by" : "danabramov",
+      "descendants" : 571,
+      "kids" : [ 22022603 ],
+      "score" : 1657,
+      "time" : 1578778327,
+      "title" : "Goodbye, Clean Code",
+      "type" : "story",
+      "url" : "https://overreacted.io/goodbye-clean-code/"
+    }
+    const comment = {
+      "id": 22022603,
+      "by": "burlesona",
+      "kids": [],
+      "parent": 22022466,
+      "text": "This is just a test",
+      "time": 1578779645,
+      "type":"comment"
+    }
+    const mock = nock('https://hacker-news.firebaseio.com/v0')
+      .get(`/item/${story.id}.json`)
+      .reply(200, story)
+      .get(`/item/${comment.id}.json`)
+      .reply(200, comment)
+
+    expect( await getItem('22022466', 1) ).toEqual({
+      ...story,
+      date: expect.any(Date),
+      children: [
+        { ...comment, date: expect.any(Date) }
+      ]
+    })
 
     mock.done()
   })
