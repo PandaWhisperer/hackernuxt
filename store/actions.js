@@ -7,3 +7,7 @@ export async function loadStories({ commit }, type = 'top') {
 export async function loadStory({ commit }, id) {
   commit('setCurrent', await getItem(id, 1))
 }
+
+export async function loadComments({ commit }, id) {
+  commit('setChildren', { id, children: (await getItem(id, 1)).children })
+}
