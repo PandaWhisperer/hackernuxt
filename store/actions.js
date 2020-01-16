@@ -9,5 +9,6 @@ export async function loadStory({ commit }, id) {
 }
 
 export async function loadComments({ commit }, id) {
-  commit('setChildren', { id, children: (await getItem(id, 1)).children })
+  const { children } = await getItem(id, 1)
+  commit('setChildren', { id, children })
 }
