@@ -21,7 +21,9 @@
 
     <v-app-bar fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+      <nuxt-link to="/" tag="v-toolbar-title">
+        {{ title }}
+      </nuxt-link>
       <v-spacer />
     </v-app-bar>
   </div>
