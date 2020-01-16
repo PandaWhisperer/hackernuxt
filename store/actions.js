@@ -5,5 +5,5 @@ export async function loadStories({ commit }, type = 'top') {
 }
 
 export async function loadStory({ commit }, id) {
-    commit('setCurrent', await getItem(id))
+  commit('setCurrent', await getItem(id, 1))
 }
