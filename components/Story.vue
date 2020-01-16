@@ -19,8 +19,7 @@
         {{ story.descendants }} Comments
       </v-card-subtitle>
 
-      <v-card-text>
-      </v-card-text>
+      <v-card-text v-html="story.text"/>
     </v-card>
 
     <comment
