@@ -12,7 +12,7 @@
         </v-list-item-title>
         <v-list-item-subtitle>
           By {{ story.by }},
-          {{ formatTime(story.date) }}
+          {{ $timeAgo(story.date) }}
         </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
@@ -20,17 +20,10 @@
 </template>
 
 <script>
-import { format } from 'timeago.js'
-
 export default {
   computed: {
     stories() {
       return this.$store.state.stories
-    }
-  },
-  methods: {
-    formatTime(time) {
-      return format(time)
     }
   }
 }

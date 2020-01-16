@@ -6,7 +6,7 @@
       </v-card-title>
       <v-card-subtitle>
         <strong>{{ story.by }}</strong>
-        posted {{ formatTime(story.date) }}
+        posted {{ $timeAgo(story.date) }}
 
         <v-icon>mdi-comments-text</v-icon>
         {{ story.descendants }} Comments<br/>
@@ -47,7 +47,6 @@
 </style>
 
 <script>
-import { format } from 'timeago.js'
 import Comment from '~/components/Comment.vue'
 
 export default {
@@ -63,10 +62,6 @@ export default {
     }
   },
   methods: {
-    formatTime(time) {
-      return format(time)
-    },
-
     urlFor({ id }) {
       return `https://news.ycombinator.com/item?id=${id}`
     }
