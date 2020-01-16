@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card tile flat>
     <v-card-subtitle>
       <strong>{{ comment.by }} said</strong>
       {{ $timeAgo(comment.date) }}
