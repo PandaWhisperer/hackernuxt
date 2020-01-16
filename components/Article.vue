@@ -4,10 +4,12 @@
       {{ item.title }}
     </v-card-title>
     <v-card-subtitle>
-      Posted on {{ new Date(item.pubDate).toDateString() }}
+      By {{ item.by }}<br/>
+      Posted on {{ item.date.toDateString() }}<br/>
+      Comments: {{ item.descendants }}
     </v-card-subtitle>
     <v-card-text>
-      <a :href="item.link" target="_blank">{{ item.link }}</a>
+      <a :href="item.url" target="_blank">{{ item.url }}</a>
     </v-card-text>
   </v-card>
 

@@ -6,7 +6,8 @@
           {{ item.title }}
         </v-list-item-title>
         <v-list-item-subtitle>
-          {{ new Date(item.pubDate).toDateString() }}
+          By {{ item.by }},
+          {{ item.date.toDateString() }}
         </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
