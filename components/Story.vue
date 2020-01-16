@@ -4,6 +4,7 @@
       <v-card-title>
         {{ story.title }}
       </v-card-title>
+
       <v-card-subtitle>
         <strong>{{ story.by }}</strong>
         posted {{ $timeAgo(story.date) }}<br/>
@@ -17,6 +18,7 @@
         <v-icon>mdi-comments-text</v-icon>
         {{ story.descendants }} Comments
       </v-card-subtitle>
+
       <v-card-text>
       </v-card-text>
     </v-card>
@@ -58,7 +60,7 @@ export default {
       return this.$store.state.current
     },
     comments() {
-      return this.$store.state.current.kids
+      return this.$store.state.current.children
     }
   },
   methods: {
