@@ -1,13 +1,13 @@
 import axios from 'axios'
 import nock from 'nock'
-import { loadItems } from '~/store/actions'
+import { loadStories } from '~/store/actions'
 
 beforeAll(() => {
   axios.defaults.adapter = require('axios/lib/adapters/http')
 })
 
 describe('actions', () => {
-  test('loadItems', async () => {
+  test('loadStories', async () => {
     const stories = [{
       "id" : 22022466,
       "by" : "danabramov",
@@ -30,9 +30,9 @@ describe('actions', () => {
     })
 
     const commit = jest.fn()
-    await loadItems({ commit })
+    await loadStories({ commit })
 
-    expect( commit ).toHaveBeenCalledWith('setItems',
+    expect( commit ).toHaveBeenCalledWith('setStories',
       stories.map(story => ({ ...story, date: expect.any(Date) }))
     )
 

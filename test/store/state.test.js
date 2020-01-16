@@ -1,8 +1,8 @@
 import state from '~/store/state'
 
 describe('state', () => {
-  test('items should be empty', () => {
-    expect(state().items).toEqual([])
+  test('stories should be empty', () => {
+    expect(state().stories).toEqual([])
   })
 
   test('current should be null', () => {

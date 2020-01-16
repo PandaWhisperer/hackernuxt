@@ -1,13 +1,13 @@
 <template>
   <v-list-item-group>
-    <v-list-item v-for="item in items" :key="item.id" two-line>
-      <v-list-item-content @click="selectItem(item)">
+    <v-list-item v-for="story in stories" :key="story.id" two-line>
+      <v-list-item-content @click="selectStory(story)">
         <v-list-item-title>
-          {{ item.title }}
+          {{ story.title }}
         </v-list-item-title>
         <v-list-item-subtitle>
-          By {{ item.by }},
-          {{ item.date.toDateString() }}
+          By {{ story.by }},
+          {{ story.date.toDateString() }}
         </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
@@ -17,13 +17,13 @@
 <script>
 export default {
   computed: {
-    items() {
-      return this.$store.state.items
+    stories() {
+      return this.$store.state.stories
     }
   },
   methods: {
-    selectItem(item) {
-      this.$store.commit('setCurrent', item)
+    selectStory(story) {
+      this.$store.commit('setCurrent', story)
     }
   }
 }

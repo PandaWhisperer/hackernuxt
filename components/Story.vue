@@ -1,15 +1,15 @@
 <template>
-  <v-card v-if="item">
+  <v-card v-if="story">
     <v-card-title>
-      {{ item.title }}
+      {{ story.title }}
     </v-card-title>
     <v-card-subtitle>
-      By {{ item.by }}<br/>
-      Posted on {{ item.date.toDateString() }}<br/>
-      Comments: {{ item.descendants }}
+      By {{ story.by }}<br/>
+      Posted on {{ story.date.toDateString() }}<br/>
+      Comments: {{ story.descendants }}
     </v-card-subtitle>
     <v-card-text>
-      <a :href="item.url" target="_blank">{{ item.url }}</a>
+      <a :href="story.url" target="_blank">{{ story.url }}</a>
     </v-card-text>
   </v-card>
 
@@ -26,7 +26,7 @@
 <script>
 export default {
   computed: {
-    item() {
+    story() {
       return this.$store.state.current
     }
   }

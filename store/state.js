@@ -1,4 +1,4 @@
 export default () => ({
-  items: [],
+  stories: [],
   current: null
 })

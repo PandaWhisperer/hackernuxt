@@ -18,7 +18,7 @@ export default {
     Stories, Story
   },
   async fetch({ store, params }) {
-    await store.dispatch('loadItems', params.stories)
+    await store.dispatch('loadStories', params.stories)
   },
   validate({ params }) {
     return !params.stories || /top|new|best/.test(params.stories)

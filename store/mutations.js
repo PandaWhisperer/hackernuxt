@@ -1,7 +1,7 @@
-export function setItems(state, items) {
-  state.items = items
+export function setStories(state, stories) {
+  state.stories = stories
 }
 
-export function setCurrent(state, item) {
-  state.current = item
+export function setCurrent(state, story) {
+  state.current = story
 }
