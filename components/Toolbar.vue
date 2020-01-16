@@ -35,13 +35,18 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
+          title: 'New Stories',
+          to: '/new'
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Top Stories',
+          to: '/top'
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'Best Stories',
+          to: '/best'
         }
       ],
       title: 'HackerNews'

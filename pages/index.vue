@@ -18,7 +18,10 @@ export default {
     Items, ArticleView
   },
   async fetch({ store, params }) {
-    await store.dispatch('loadItems')
+    await store.dispatch('loadItems', params.stories)
+  },
+  validate({ params }) {
+    return !params.stories || /top|new|best/.test(params.stories)
   }
 }
 </script>
