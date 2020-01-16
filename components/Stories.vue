@@ -1,7 +1,12 @@
 <template>
   <v-list-item-group>
-    <v-list-item v-for="story in stories" :key="story.id" two-line>
-      <v-list-item-content @click="selectStory(story)">
+    <v-list-item
+      v-for="story in stories"
+      :key="story.id"
+      :to="`/stories/${story.id}`"
+      two-line
+    >
+      <v-list-item-content>
         <v-list-item-title>
           {{ story.title }}
         </v-list-item-title>
