@@ -7,8 +7,14 @@
       <v-card-subtitle>
         By {{ story.by }},
         posted on {{ story.date.toDateString() }}
-        Comments: {{ story.descendants }}<br/>
+
+        <v-icon>mdi-comments-text</v-icon>
+        {{ story.descendants }} Comments<br/>
+
+        <v-icon>mdi-external-link</v-icon>
         <a :href="story.url" target="_blank">{{ story.url }}</a><br/>
+
+        <v-icon>mdi-external-link</v-icon>
         <a :href="urlFor(story)" target="_blank">{{ urlFor(story) }}</a>
       </v-card-subtitle>
       <v-card-text>

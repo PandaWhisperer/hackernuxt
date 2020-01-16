@@ -36,17 +36,17 @@ export default {
       drawer: false,
       items: [
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-newspaper',
           title: 'New Stories',
           to: '/new'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-fire',
           title: 'Top Stories',
           to: '/top'
         },
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-seal',
           title: 'Best Stories',
           to: '/best'
         }
