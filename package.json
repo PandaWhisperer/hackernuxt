@@ -15,7 +15,8 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.9.3",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "timeago.js": "^4.0.2"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.0.0",
