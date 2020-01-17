@@ -1,9 +1,13 @@
 import _ from 'lodash'
 import assert from 'assert'
 
-export default class TestAdapter {
+export default function(testData) {
+  return new TestAdapter(testData)
+}
+
+export class TestAdapter {
   constructor(data) {
-    this.data = require(data)
+    this.data = data
   }
 
   get(path) {

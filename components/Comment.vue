@@ -30,8 +30,6 @@
 </style>
 
 <script>
-import { getChildren } from '~/lib/hackernews'
-
 export default {
   name: 'comment',
   data: () => ({
@@ -44,7 +42,7 @@ export default {
   methods: {
     async expand() {
       this.loading = true
-      this.children = await getChildren(this.comment)
+      this.children = await this.$hn.getChildren(this.comment)
       this.loading = false
     }
   }

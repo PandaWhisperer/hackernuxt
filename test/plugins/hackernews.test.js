@@ -1,10 +1,9 @@
-import HackerNews from '~/lib/hackernews'
-import TestAdapter from './test_adapter'
+import { HackerNews, TestAdapter } from '~/plugins/hackernews'
 
-const testData = new TestAdapter('./database.json')
+const testData = new TestAdapter(require('../data/database.json'))
 
 describe('HackerNews', () => {
-  let db = new HackerNews({ db: testData })
+  let db = new HackerNews(testData)
 
   describe('getItem', () => {
     test('id is required', async () => {

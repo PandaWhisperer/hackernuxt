@@ -1,17 +1,8 @@
-import firebase from 'firebase/app'
-import 'firebase/database'
+export const STORY_TYPES = ['top', 'new', 'best', 'ask', 'show', 'job']
 
-const DEFAULT_URL = 'https://hacker-news.firebaseio.com'
-const STORY_TYPES = ['top', 'new', 'best', 'ask', 'show', 'job']
-
-export default class Hackernews {
-  constructor(options = {}) {
-    if (options.db) {
-      this.db = options.db
-    } else {
-      this.app = firebase.initializeApp({ databaseURL: DEFAULT_URL })
-      this.db  = this.app.database()
-    }
+export default class HackerNews {
+  constructor(db) {
+    this.db = db
   }
 
   async getItem(id, depth = 0) {
