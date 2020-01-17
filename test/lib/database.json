@@ -1,0 +1,35 @@
+{
+  "v0": {
+    "item": {
+      "22022466": {
+        "id" : 22022466,
+        "by" : "danabramov",
+        "descendants" : 571,
+        "kids": [ 22022603 ],
+        "score" : 1657,
+        "time" : 1578778327,
+        "title" : "Goodbye, Clean Code",
+        "type" : "story",
+        "url" : "https://overreacted.io/goodbye-clean-code/"
+      },
+      "22022603": {
+        "id": 22022603,
+        "by": "burlesona",
+        "kids": [],
+        "parent": 22022466,
+        "text": "This is just a test",
+        "time": 1578779645,
+        "type":"comment"
+      }
+    },
+    "newstories": [
+      22022466
+    ],
+    "topstories": [
+      22022466
+    ],
+    "beststories": [
+      22022466
+    ]
+  }
+}
