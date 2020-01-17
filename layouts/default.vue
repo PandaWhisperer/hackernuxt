@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <toolbar />
+    <Toolbar />
 
     <v-content>
       <v-container fluid>
@@ -8,16 +8,15 @@
       </v-container>
     </v-content>
 
-    <v-footer app>
-      <span>&copy; 2020 Christoph Wagner</span>
-    </v-footer>
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import Toolbar from '~/components/Toolbar.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
-  components: { Toolbar },
+  components: { Toolbar, Footer }
 }
 </script>
