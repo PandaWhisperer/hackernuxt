@@ -11,7 +11,7 @@
           {{ story.title }}
         </v-list-item-title>
         <v-list-item-subtitle>
-          By {{ story.by }},
+          <strong>{{ story.by }}</strong>,
           {{ $timeAgo(story.date) }},
           {{ story.descendants }} comments
         </v-list-item-subtitle>
