@@ -2,8 +2,13 @@ import firebase from 'firebase/app'
 import 'firebase/database'
 
 export default function(url) {
-  const app = firebase.initializeApp({ databaseURL: url })
-  const db  = app.database()
+  let app
 
-  return db
+  try {
+    app = firebase.app()
+  } catch {
+    app = firebase.initializeApp({ databaseURL: url })
+  }
+
+  return app.database()
 }
