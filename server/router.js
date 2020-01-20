@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import readability from './api/readability'
+import articleParser from './api/article'
 
 const router = new Router()
 
-router.get('/readability', readability)
+router.get('/article', articleParser)
 
 export default router
