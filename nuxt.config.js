@@ -44,6 +44,9 @@ module.exports = {
   modules: [
     '@nuxtjs/axios'
   ],
+  serverMiddleware: [
+    { path: '/api', handler: '~/server/router.js' }
+  ],
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
