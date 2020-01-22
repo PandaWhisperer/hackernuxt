@@ -19,7 +19,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar fixed app>
+    <v-app-bar dense fixed app color="primary">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 
       <nuxt-link to="/" tag="v-toolbar-title">
