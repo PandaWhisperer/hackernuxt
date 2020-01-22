@@ -5,6 +5,7 @@
         v-for="story in stories"
         :key="story.id"
         :to="`/stories/${story.id}`"
+        nuxt
         two-line
       >
         <v-list-item-content>
