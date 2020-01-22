@@ -19,14 +19,33 @@
         {{ story.descendants }} Comments
       </v-card-subtitle>
 
-      <v-card-text v-html="story.text"/>
+      <v-tabs centered v-model="tab">
+        <v-tab @click="fetchArticle(story.url)">Article</v-tab>
+        <v-tab>Comments</v-tab>
+      </v-tabs>
     </v-card>
 
-    <comment
-      v-for="comment in story.children"
-      :comment="comment"
-      :key="comment.id"
-    />
+    <v-tabs-items v-model="tab">
+      <v-tab-item>
+        <v-card>
+          <v-card-text v-if="story.text" v-html="story.text"/>
+          <v-card-text v-else-if="article" v-html="article.content"/>
+          <v-progress-circular v-else indeterminate color="primary"/>
+        </v-card>
+      </v-tab-item>
+      <v-tab-item>
+        <comment
+          v-for="comment in story.children"
+          :comment="comment"
+          :key="comment.id"
+        />
+        <v-card v-if="!story.children || story.children.length === 0">
+          <v-card-text>
+            No comments... yet.
+          </v-card-text>
+        </v-card>
+      </v-tab-item>
+    </v-tabs-items>
   </div>
 </template>
 
@@ -43,12 +62,18 @@ export default {
   components: {
     Comment
   },
-
+  data: () => ({
+    article: null,
+    tab: 1
+  }),
   props: {
     story: Object
   },
-
   methods: {
+    async fetchArticle(url) {
+      if (!this.article)
+        this.article = await this.$axios.$get(`/api/article?url=${url}`)
+    },
     urlFor({ id }) {
       return `https://news.ycombinator.com/item?id=${id}`
     }
