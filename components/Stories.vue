@@ -18,6 +18,12 @@
             {{ story.descendants }} comments
           </v-list-item-subtitle>
         </v-list-item-content>
+
+        <v-list-item-action>
+          <v-list-item-action-text>
+            {{ story.score }}
+          </v-list-item-action-text>
+        </v-list-item-action>
       </v-list-item>
     </v-list-item-group>
   </v-card>
