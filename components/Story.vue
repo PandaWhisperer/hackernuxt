@@ -20,21 +20,18 @@
       </v-card-subtitle>
 
       <v-tabs centered v-model="tab">
-        <v-tab @click="fetchArticle(story.url)">Article</v-tab>
+        <v-tab>Article</v-tab>
         <v-tab>Comments</v-tab>
       </v-tabs>
     </v-card>
 
     <v-tabs-items v-model="tab">
       <v-tab-item>
-        <v-card>
-          <v-card-text v-if="story.text" v-html="story.text"/>
-          <v-card-text v-else-if="article" v-html="article.content"/>
-          <v-progress-circular v-else indeterminate color="primary"/>
-        </v-card>
+        <Article :story="story"/>
       </v-tab-item>
+
       <v-tab-item>
-        <comment
+        <Comment
           v-for="comment in story.children"
           :comment="comment"
           :key="comment.id"
@@ -56,24 +53,20 @@
 </style>
 
 <script>
+import Article from '~/components/Article.vue'
 import Comment from '~/components/Comment.vue'
 
 export default {
   components: {
-    Comment
+    Article, Comment
   },
   data: () => ({
-    article: null,
     tab: 1
   }),
   props: {
     story: Object
   },
   methods: {
-    async fetchArticle(url) {
-      if (!this.article)
-        this.article = await this.$axios.$get(`/api/article?url=${url}`)
-    },
     urlFor({ id }) {
       return `https://news.ycombinator.com/item?id=${id}`
     }
