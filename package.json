@@ -21,13 +21,13 @@
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9",
-    "@nuxtjs/vuetify": "^1.0.0",
+    "@nuxtjs/vuetify": "^1.10.2",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-jest": "^24.9.0",
     "browser-env": "^3.2.5",
     "jest": "^24.9.0",
     "nock": "^11.7.2",
+    "nodemon": "^1.18.9",
     "vue-jest": "^4.0.0-0"
   }
 }
