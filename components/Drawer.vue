@@ -8,12 +8,28 @@
         router
         exact
       >
-        <v-list-item-action>
+        <v-list-item-icon>
           <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-action>
+        </v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title v-text="item.title" />
         </v-list-item-content>
+      </v-list-item>
+
+      <v-subheader>Settings</v-subheader>
+
+      <v-list-item>
+        <v-list-item-icon>
+          <v-icon>mdi-brightness-6</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>
+            Dark Mode
+          </v-list-item-title>
+        </v-list-item-content>
+        <v-list-item-action>
+          <v-switch v-model="$vuetify.theme.dark"></v-switch>
+        </v-list-item-action>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
