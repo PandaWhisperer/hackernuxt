@@ -31,6 +31,13 @@
           <v-switch v-model="$vuetify.theme.dark"></v-switch>
         </v-list-item-action>
       </v-list-item>
+
+      <v-subheader>About</v-subheader>
+      <v-list-item>
+        <v-list-item-content>
+          &copy; 2020 Christoph Wagner
+        </v-list-item-content>
+      </v-list-item>
     </v-list>
   </v-navigation-drawer>
 </template>
